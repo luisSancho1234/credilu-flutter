@@ -1,3 +1,4 @@
+import 'package:credilu/views/login_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,55 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Credilu'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  var usernameControl = TextEditingController();
-  var passwordControl = TextEditingController();
-
-  login() => null;
-
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-              children:[
-              TextFormField(
-                controller: usernameControl,
-              ),
-              TextFormField(
-                controller: passwordControl,
-              ),
-              Row(
-                children: [
-                  GestureDetector(child: const Text('Cadastre-se')),
-                  ElevatedButton(onPressed: login, child: Text('Entrar')),
-                ],
-              )
-          ])
-        ),
-      ),
+      home: LoginView(),
     );
   }
 }
